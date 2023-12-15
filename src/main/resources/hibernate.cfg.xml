@@ -14,7 +14,8 @@
 
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-
+        <!-- Activate Hibernate statistics -->
+        <property name="generate_statistics">false</property>
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
         <!-- Validate the database schema on startup -->
