@@ -36,6 +36,15 @@ public class HelloWorldClient {
             e.printStackTrace();
         }
 
+        /*Third lesson*/
+        session.close();
+        message.setText("Trying to modify a detached object");
+        /*Open another session*/
+        session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        /*Hooks the previously detached object to the persistent object and merges diffs*/
+        session.merge(message);
+        session.getTransaction().commit();
         session.close();
     }
 }
